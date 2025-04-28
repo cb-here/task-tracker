@@ -16,6 +16,8 @@ export const registerUser = async (userData) => {
 export const loginUser = async (userData) => {
     try {
         const response = await api.post('/login', userData)
+        const token = response.data.token
+        localStorage.setItem("token", token)
         return response.data
     } catch(error) {
         throw new Error(error.response.data?.message || 'Failed to sign in user!')

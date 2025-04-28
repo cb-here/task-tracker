@@ -7,17 +7,27 @@ import {QueryClientProvider, QueryClient} from '@tanstack/react-query'
 import SignUp from './pages/SignUp.jsx'
 import SignIn from './pages/SignIn.jsx'
 import Home from './pages/Home.jsx'
+import ProjectDetail from './pages/ProjectDetail.jsx'
 import { ToastContainer } from 'react-toastify'
+import Protected from './components/Protected.jsx'
 
 
 const router = createBrowserRouter([
   {
     path: '/',
-    element: <App />,
+    element: (
+      <Protected>
+        <App />
+      </Protected>
+    ),
     children: [
       {
         path: '/',
         element: <Home />
+      },
+      {
+        path: "/:id",
+        element: <ProjectDetail />
       }
     ]
   },
