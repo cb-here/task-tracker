@@ -1,7 +1,9 @@
 import axios from 'axios'
 
+const backendURL = import.meta.env.VITE_API_BASE_URL
+
 const api = axios.create({
-    baseURL: "http://localhost:5000/api/auth/"
+    baseURL: `${backendURL}/api/auth/`
 })
 
 export const registerUser = async (userData) => {

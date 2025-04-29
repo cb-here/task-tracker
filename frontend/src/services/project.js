@@ -1,7 +1,9 @@
 import axios from 'axios'
 
+const backendURL = import.meta.env.VITE_API_BASE_URL
+
 const api = axios.create({
-    baseURL: 'http://localhost:5000/api/project'
+    baseURL: `${backendURL}/api/project/`
 })
 
 export const createProject = async (projectData) => {
