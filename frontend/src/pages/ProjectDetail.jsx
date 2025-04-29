@@ -67,6 +67,11 @@ const ProjectDetail = () => {
         }
     })
 
+    const completedTasks = project?.tasks.filter(t => t.status === 'completed').length
+    const totalTasks = project?.tasks.length
+
+    const progress = totalTasks > 0 ? Math.round((completedTasks / totalTasks) * 100) : 0
+
     if (isPending) {
         return (
             <div className="bg-gray-700 h-screen w-full px-10 flex justify-center items-center">
@@ -98,6 +103,7 @@ const ProjectDetail = () => {
                         </p>
                         <p className="italic">Created By: {project.userId?.username}</p>
                     </div>
+                    <p className="opacity-80 text-sm mb-4">Progress: {progress}%</p>
                 </div>
                 <div className="px-5">
                     <h1 className="text-center text-2xl border-b pb-2 text-gray-300 font-bold">Project Tasks</h1>
