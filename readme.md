@@ -13,11 +13,11 @@ Features
 
 Live Demo: 
 
-// will be add
+complete working project: https://task-tracker-kappa-lovat.vercel.app/
+Backend is live on: https://task-tracker-backend-k4lr.onrender.com
 
 
- Clone the Repository
-
+Clone the Repository
 
 git clone https://github.com/cb-here/task-tracker.git
 cd task-tracker
