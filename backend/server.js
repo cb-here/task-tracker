@@ -3,6 +3,9 @@ import cors from 'cors'
 import authRoutes from './routers/user.router.js'
 import projectRoutes from './routers/project.router.js'
 import { connectDB } from './config/db.js'
+import dotenv from 'dotenv'
+
+dotenv.config()
 
 const app = express()
 
@@ -12,7 +15,7 @@ app.use(cors())
 app.use("/api/auth", authRoutes)
 app.use('/api/project', projectRoutes)
 
-const PORT = 5000
+const PORT = process.env.PORT || 5000
 
 app.listen(PORT, () => {
     connectDB()
