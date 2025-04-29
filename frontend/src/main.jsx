@@ -10,6 +10,7 @@ import Home from './pages/Home.jsx'
 import ProjectDetail from './pages/ProjectDetail.jsx'
 import { ToastContainer } from 'react-toastify'
 import Protected from './components/Protected.jsx'
+import Profile from './pages/Profile.jsx'
 
 
 const router = createBrowserRouter([
@@ -24,6 +25,10 @@ const router = createBrowserRouter([
       {
         path: '/',
         element: <Home />
+      },
+      {
+        path: '/profile',
+        element: <Profile />
       },
       {
         path: "/:id",

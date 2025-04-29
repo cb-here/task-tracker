@@ -23,3 +23,16 @@ export const loginUser = async (userData) => {
         throw new Error(error.response.data?.message || 'Failed to sign in user!')
     }
 }
+
+export const userProfile = async () => {
+    const token = localStorage.getItem("token")
+    if (!token) throw new Error("Token not found")
+    try {
+        const response = await api.get("/profile", {
+            headers : {Authorization: `Bearer ${token}`}
+        })
+        return response.data
+    } catch(error) {
+        throw new Error(error.response.data?.message || 'Failed to get your profile')
+    }
+}
